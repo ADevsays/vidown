@@ -1,0 +1,32 @@
+{
+  "name": "vidown",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Una aplicación para descargar vídeos de youtube o música.",
+  "main": "./electron/main.js",
+  "scripts": {
+    "dev": "electron ./electron/main.js",
+    "styles": "npx tailwindcss -i ./main.css -o ./electron/styles.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-builder"
+  },
+  "build": {
+    "icon": "./build/icon/2.jpeg", 
+    "appId": "com.vidown.my-app",
+    "files": [
+      "**/*",
+      "downloader_youtube.py"
+    ],
+    "extraResources": [
+      "./downloader_youtube.py"
+    ]
+  },
+  "keywords": [],
+  "author": "Adevsays",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-builder": "^24.9.1",
+    "tailwindcss": "^3.4.1",
+    "electron": "^28.2.1"
+  }
+}
